@@ -1,0 +1,22 @@
+<mvc:View id = "Master" controllerName="stk.starterkit.controller.Master" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+    <Shell id="shell">
+        <App id="Master1">
+            <pages>
+                <Page id="page" title="{i18n>title}" >
+                    <content>
+                    
+                        <Carousel id="carousel1" height="25%" loop="true">
+                            <pages>
+                                <Image id="image1" width="60%" height="100%" src="https://www.drupal.org/files/Capgemini_Logo_2COL_RGB.png"/>
+                                <Image id="image2" width="40%" height="100%" src="https://www.drupal.org/files/Capgemini_Logo_2COL_RGB.png"/>
+                            </pages>
+                            <customLayout>
+                                <CarouselLayout id="carouselLayout1" visiblePagesCount="2"/>
+                            </customLayout>
+                        </Carousel>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

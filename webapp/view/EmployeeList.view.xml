@@ -1,0 +1,40 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="stk.starterkit.controller.EmployeeList" displayBlock="true">
+	<Page id="Performance" showNavButton="true" navButtonPress="handleNavButtonPress" title="{insultModel>/insult}" 
+    xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" cd:w5g.dt.context="/Employees">
+        <Table id="PerformanceTable" items="{path:'/Employees', parameters:{expand:'Orders'}}">
+			<columns>
+				<Column id="PerformanceColumn1">
+					<header>
+						<Label id="PerformanceLabel1" text="{i18n>employeeName}"/>
+					</header>
+				</Column>
+				<Column id="PerformanceColumn2">
+					<header>
+						<Label id="PerformanceLabel2" text="{i18n>position}"/>
+					</header>
+				</Column>
+				<Column id="PerformanceColumn3">
+					<header>
+						<Label id="PerformanceLabel3" text="{i18n>orders}"/>
+					</header>
+				</Column>
+                	<Column id="PerformanceColumn4">
+					<header>
+						<Label text="{i18n>actions}" id="PerformanceLabel4" class="sapUiMediumMarginBegin"/>
+					</header>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem id= "PreformanceColumns">
+                    <Text id = "PerformanceFullName" text="{FirstName} {LastName}"/>
+                    <Text id = "PerformanceTitle" text="{Title}"/>
+					<Text id = "PerformanceOrders" text="{parts: [{path: 'Orders'}], formatter: '.formatter.formatOrdersNum'}"/>
+                    <FlexBox id = "PerformanceFlexbox">
+                        <Button id = "PerformanceMotivate" text="{i18n>motivate}" press="onMotivate" class="blueColor"/>
+                        <Button id = "PerformanceFire" text="{i18n>fire}" press="onFire" class="sapUiMediumMarginBegin blueColor"/>
+                    </FlexBox> 
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>
